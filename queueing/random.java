@@ -22,7 +22,7 @@ class montecarlo{
         Map<Integer,String>map = new LinkedHashMap<>();
         //待ち行列理論変数
         double lambda = 10.0;
-        double myu = 20.0;
+        double myu = 40.0;
         double arrivingTime = poisson_distribution(lambda,t);
         double serviceTime = characteristic_distribution(myu,t);
         System.out.printf("arrivingTime %f\n",arrivingTime);
@@ -30,7 +30,7 @@ class montecarlo{
 
         System.out.println("-----------------------------------");
         //到着時刻・サービス時刻の決定
-        for(counter = 0; counter < 5; counter++){
+        for(counter = 0; counter < 100; counter++){
             System.out.printf("時刻t = %f\n",t);
             //判定のために四捨五入してキャスト
             int arriveInt = casting(arrivingTime);
